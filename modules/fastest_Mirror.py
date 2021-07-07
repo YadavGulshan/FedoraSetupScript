@@ -20,3 +20,7 @@ def Check_FastestMirror():
         os.system("echo fastestmirror=1 >> /etc/dnf/dnf.conf")
         file.close
         return 0
+
+
+def parallel_Download():
+    os.system("echo max_parallel_downloads=10 >> /etc/dnf/dnf.conf")

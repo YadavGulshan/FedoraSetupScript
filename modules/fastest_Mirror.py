@@ -16,11 +16,12 @@ def Check_FastestMirror():
         file.close
         return 1
     else:
-        # print('String', FastestMirror, 'Not Found')
+        # Appending fastestmirror=1 in dnf conf file
         os.system("echo fastestmirror=1 >> /etc/dnf/dnf.conf")
         file.close
         return 0
 
 
 def parallel_Download():
+    # Configuring max parallel downloads to 10
     os.system("echo max_parallel_downloads=10 >> /etc/dnf/dnf.conf")

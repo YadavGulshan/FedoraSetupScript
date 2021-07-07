@@ -1,0 +1,14 @@
+1. Update the system
+2. Select the fastest mirror
+3. Install required softwares.
+4. Perform a fstrim for ssd
+5. Install Flutter
+6. Install Android Studio
+7. Install Kde Connect
+7. Install ZSH
+7. Install Gnome-tweeks and Extension
+7. Install postman
+7. Install FreeCad from flatpak
+8. Setup Timeshift
+9. Install Telegram, Discord, zoom
+

@@ -38,12 +38,15 @@ def flutter():
         system("pip3 install requests")
         import requests
         try:
-            r = requests.get("http://ipconfig.me")
+            r = requests.get("http://ipconfig.me/ip")
             ipaddr = r.text
-
+            system(
+                f"wget https://r2---sn-hpjgvnj5o-cvhe.gvt1.com/edgedl/android/studio/ide-zips/4.2.2.0/android-studio-ide-202.7486908-linux.tar.gz?cms_redirect=yes&mh=Ug&mip={ipaddr}&mm=28&mn=sn-hpjgvnj5o-cvhe&ms=nvh&mt=1625660895&mv=m&mvi=2&pcm2cms=yes&pl=24&rmhost=r3---sn-hpjgvnj5o-cvhe.gvt1.com&shardbypass=yes&smhost=r1---sn-hpjgvnj5o-cvhs.gvt1.com")
         except:
             print("something gone wrong!")
-        system(
-            f"wget https://r2---sn-hpjgvnj5o-cvhe.gvt1.com/edgedl/android/studio/ide-zips/4.2.2.0/android-studio-ide-202.7486908-linux.tar.gz?cms_redirect=yes&mh=Ug&mip={ipaddr}&mm=28&mn=sn-hpjgvnj5o-cvhe&ms=nvh&mt=1625660895&mv=m&mvi=2&pcm2cms=yes&pl=24&rmhost=r3---sn-hpjgvnj5o-cvhe.gvt1.com&shardbypass=yes&smhost=r1---sn-hpjgvnj5o-cvhs.gvt1.com")
+            print("Please download the android studio from their official site")
+        print("Task Completed, Now uninstalling Requests library")
+        system("pip3 uninstall requests")
+            
     # system("")
     # system("")

@@ -1,6 +1,10 @@
 from os import system
 
 
+def input_value(program_name):
+    return input(f"Do you want me to install {program_name} [y/N]: ")
+
+
 def basic_installation():
     # Basic softwares installation
     system("dnf install code git zsh gcc curl wget vim neovim")
@@ -9,7 +13,7 @@ def basic_installation():
     system("dnf install zsh-syntax-highlighting")
 
     # Gnome specific programs
-    gnome_setup = input("Do you want me to install gnome tools")
+    gnome_setup = input_value("Gnome tweeks")
     if(gnome_setup == "Y" or gnome_setup == "y"):
         system("dnf install gnome-tweak-tool")
         system("dnf install gnome-extensions-app")
@@ -23,7 +27,9 @@ def basic_installation():
 
 def flutter():
     # Flutter Installation
-    if(input("Do you want to install Flutter?[y/N]") != "N"):
+    flutter = "N"
+    flutter = input_value("Flutter")
+    if(flutter == "Y" or flutter == "y"):
         print("Cloning Flutter")
         system("git clone https://github.com/flutter/flutter.git")
         system("""export PATH="$PATH:`pwd`/flutter/bin" """)
@@ -47,6 +53,26 @@ def flutter():
             print("Please download the android studio from their official site")
         print("Task Completed, Now uninstalling Requests library")
         system("pip3 uninstall requests")
-            
-    # system("")
-    # system("")
+
+
+def social():
+
+    # Telegram Installation
+    telegram = input_value("Telegram")
+    if(telegram == "y" or telegram == "Y"):
+        system("dnf install telegram-desktop")
+
+    # Zoom installation
+    zoom = input_value("Zoom")
+    if(zoom == "y" or zoom == "Y"):
+        system("dnf install zoom")
+
+    # Discord Installation
+    discord = input_value("discord")
+    if(discord == "y" or zoom == "Y"):
+        system("dnf install zoom")
+
+
+# flutter()
+
+# social()

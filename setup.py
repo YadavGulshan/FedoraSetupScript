@@ -38,12 +38,8 @@ system("dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-non
 def repo_Setup():
     pwd = getcwd()
     repo = pwd+"/repo"
-    print(repo)
-    try:
-        # shutil.copyfile("*.repo", "/etc/yum.repos.d/") # Issue with *.repo
-        system(f"cp {repo}/*.repo /etc/yum.repos.d/")
-    except PermissionError:
-        print("Permission Denied")  # Won't be exectuted. :(
+    # print(repo)
+    system(f"cp {repo}/*.repo /etc/yum.repos.d/")
 
 
 repo_Setup()

@@ -8,7 +8,7 @@ from modules.dnf import Check_If_Fedora
 from modules.timeshift import timeshift
 from modules.installer import basic_installation, flutter, input_value, social
 
-system("echo Script Starting..")
+system("echo Script Starting....")
 # os.system("NAME=Fedora")
 if Check_If_Fedora() != 1:
     exit()

@@ -10,16 +10,10 @@ def Check_If_Fedora():
 
     # checking condition for string found or not
     if Distribution in readfile:
-        # print('String', Distribution, 'Found')
+        print("Ohh yeah, It's Fedora")
         file.close
         return 1
     else:
-        # print('String', Distribution, 'Not Found')
+        print("This script is currently limited to fedora only")
         file.close
         return 0
-
-
-def pacMan():
-    if Check_If_Fedora() == 1:
-        print("Fuck yeah it's Fedora.")
-        return "dnf"

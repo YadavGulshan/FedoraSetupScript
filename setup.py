@@ -4,12 +4,15 @@ from os import getcwd, system
 from time import sleep, time
 import modules.check_root as isRoot
 from modules.fastest_Mirror import Check_FastestMirror, parallel_Download
-from modules.dnf import pacMan
+from modules.dnf import Check_If_Fedora
 from modules.timeshift import timeshift
 from modules.installer import basic_installation, flutter, input_value, social
 
 system("echo Script Starting..")
 # os.system("NAME=Fedora")
+if Check_If_Fedora() != 1:
+    exit()
+
 
 if isRoot.check_Root() == 0:
     exit()
@@ -46,7 +49,7 @@ def repo_Setup():
 repo_Setup()
 
 # Update
-system(pacMan() + " update")
+system("dnf update")
 
 # Basic Installation
 basic_installation()

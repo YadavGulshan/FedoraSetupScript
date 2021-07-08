@@ -7,10 +7,7 @@ def input_value(program_name):
 
 def basic_installation():
     # Basic softwares installation
-    system("dnf install code git zsh gcc curl wget vim neovim")
-
-    # ZSH Syntax highlighting.
-    system("dnf install zsh-syntax-highlighting")
+    system("dnf install code git fish gcc curl wget vim neovim")
 
     # Gnome specific programs
     gnome_setup = input_value("Gnome tweeks")

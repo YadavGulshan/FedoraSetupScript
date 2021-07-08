@@ -26,10 +26,7 @@ def my_flatpak_apps():
 
     freecad = input("Do you want to install Freecad?[Y/N]: ")
 
-    if (freecad == "Y" or freecad == "y"):
+    if (freecad == "y" or freecad == "Y"):
         system("flatpak install flathub org.freecadweb.FreeCAD")
         initialize_print()
         system("flatpak run org.freecadweb.FreeCAD")
-
-
-flatpak_setup()

@@ -1,6 +1,6 @@
 #!/bin/python3
 from modules.flatpak import flatpak_setup, my_flatpak_apps
-from os import system
+from os import getcwd, system
 from time import sleep, time
 import modules.check_root as isRoot
 from modules.fastest_Mirror import Check_FastestMirror, parallel_Download
@@ -59,6 +59,22 @@ system("dnf grouplist -v")
 print("To install any environment do\nsudo dnf install [environment name]")
 print("For example: sudo dnf install @cinnamon-desktop-environment")
 
+
+# restart
 restart = input("Do you want me to restart your pc?[y/N]: ")
 if(restart == "y" or restart == "Y"):
     system("reboot")
+
+
+def repo_Setup():
+    pwd = getcwd()
+    repo = pwd+"/repo"
+    print(repo)
+    try:
+        # shutil.copyfile("*.repo", "/etc/yum.repos.d/") # Issue with *.repo
+        system(f"cp {repo}/*.repo /etc/yum.repos.d/")
+    except PermissionError:
+        print("Permission Denied")  # Won't be exectuted. :(
+
+
+repo_Setup()

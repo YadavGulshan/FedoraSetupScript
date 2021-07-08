@@ -71,8 +71,3 @@ def social():
     discord = input_value("discord")
     if(discord == "y" or zoom == "Y"):
         system("dnf install zoom")
-
-
-# flutter()
-
-# social()

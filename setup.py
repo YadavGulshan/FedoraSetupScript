@@ -1,4 +1,5 @@
 #!/bin/python3
+from modules.fonts import fonts
 from modules.flatpak import flatpak_setup, my_flatpak_apps
 from os import getcwd, system
 from time import sleep, time
@@ -46,6 +47,9 @@ repo_Setup()
 
 # Update
 system("dnf update")
+
+# Fonts installation
+fonts()
 
 # Basic Installation
 basic_installation()

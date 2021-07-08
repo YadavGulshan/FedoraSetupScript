@@ -29,6 +29,21 @@ print("Enabling RPM Fusion repo")
 system("dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm")
 system("dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm")
 
+# Copy repo to /etc/yum.repos.d for installing some programs
+
+
+def repo_Setup():
+    pwd = getcwd()
+    repo = pwd+"/repo"
+    print(repo)
+    try:
+        # shutil.copyfile("*.repo", "/etc/yum.repos.d/") # Issue with *.repo
+        system(f"cp {repo}/*.repo /etc/yum.repos.d/")
+    except PermissionError:
+        print("Permission Denied")  # Won't be exectuted. :(
+
+
+repo_Setup()
 
 # Update
 system(pacMan() + " update")
@@ -64,17 +79,3 @@ print("For example: sudo dnf install @cinnamon-desktop-environment")
 restart = input("Do you want me to restart your pc?[y/N]: ")
 if(restart == "y" or restart == "Y"):
     system("reboot")
-
-
-def repo_Setup():
-    pwd = getcwd()
-    repo = pwd+"/repo"
-    print(repo)
-    try:
-        # shutil.copyfile("*.repo", "/etc/yum.repos.d/") # Issue with *.repo
-        system(f"cp {repo}/*.repo /etc/yum.repos.d/")
-    except PermissionError:
-        print("Permission Denied")  # Won't be exectuted. :(
-
-
-repo_Setup()

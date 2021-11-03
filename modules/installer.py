@@ -15,11 +15,11 @@ def basic_installation():
         system("dnf install gnome-tweak-tool")
         system("dnf install gnome-extensions-app")
 
-    # Appending zsh in bashrc file
-    system("echo zsh >> ~/.bashrc")
-
+    # Appending fish in bashrc file
+    system("echo fish >> ~/.bashrc")
+    print('Use "fish config" to configure it according to your needs')
     # Installing OH-MY-ZSH
-    system("""sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" """)
+    # system("""sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" """)
 
 
 def flutter():
@@ -67,4 +67,4 @@ def social():
     # Discord Installation
     discord = input_value("discord")
     if(discord == "y" or zoom == "Y"):
-        system("dnf install zoom")
+        system("dnf install discord")

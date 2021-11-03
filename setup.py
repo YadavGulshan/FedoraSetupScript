@@ -11,19 +11,21 @@ from modules.installer import basic_installation, flutter, input_value, social
 
 system("echo Script Starting....")
 # os.system("NAME=Fedora")
+print("Checking if it's fedora")
 if Check_If_Fedora() != 1:
     exit()
 
-
+print("Checking if I have a root prevelege or not")
 if isRoot.check_Root() == 0:
     exit()
 
-# Creating a timeshift snapshot
-timeshift("Before Setup")
 
+print("Fastest Mirrors part")
 # Changing to fastest mirror
 Check_FastestMirror()
 
+
+print("Setting max parallel download")
 # Setting max Parallel download to 10
 parallel_Download()
 
@@ -33,8 +35,15 @@ print("Enabling RPM Fusion repo")
 system("dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm")
 system("dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm")
 
-# Copy repo to /etc/yum.repos.d for installing some programs
 
+print("Timeshift Part")
+# Creating a timeshift snapshot
+timeshift("Before Setup")
+
+
+
+# Copy repo to /etc/yum.repos.d for installing some programs
+print("Repo part")
 
 def repo_Setup():
     pwd = getcwd()
@@ -48,6 +57,8 @@ repo_Setup()
 # Update
 system("dnf update")
 
+
+print("Font's part")
 # Fonts installation
 fonts()
 

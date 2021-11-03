@@ -8,7 +8,7 @@ from modules.fastest_Mirror import Check_FastestMirror, parallel_Download
 from modules.dnf import Check_If_Fedora
 from modules.timeshift import timeshift
 from modules.installer import basic_installation, flutter, input_value, social
-
+import sys
 def Brand():
     print("""
   ▄████  █    ██  ██▓      ██████  ██░ ██  ▄▄▄       ███▄    █ 
@@ -107,7 +107,13 @@ system("dnf grouplist -v")
 print("To install any environment do\nsudo dnf install [environment name]")
 print("For example: sudo dnf install @cinnamon-desktop-environment")
 
+for i in range(4):
+    print('Ending in '+ str(i), end='')
+    sys.stdout.flush()
+    time.sleep(1)
+system("clear")
 
+Brand()
 # restart
 restart = input("Do you want me to restart your pc?[y/N]: ")
 if(restart == "y" or restart == "Y"):
